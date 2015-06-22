@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 //angular.module('app', ['ionic', 'starter.controllers'])
-angular.module('app', ['ionic', 'starter.controllers', 'angular.filter', 'LocalStorageModule', 'firebase', 'highcharts-ng', 'ngCordova'])
+angular.module('app', ['ionic', 'angular.filter', 'LocalStorageModule', 'firebase', 'highcharts-ng', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

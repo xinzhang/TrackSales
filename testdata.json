@@ -1,0 +1,30 @@
+﻿{
+    "xz": {
+        "clients": {
+            "john": {
+                "orders": {
+                    "1": {
+                        "amount": 12,
+                        "orderdatetime": 1433948630135,
+                        "productid": 1,
+                        "price": 1.25,
+                        "quantity": 5,
+                        "status": "pending"
+                    },
+
+                    "2": {
+                        "amount": 12,
+                        "orderdatetime": 1433948630135,
+                        "productid": 2,
+                        "proce": 3.45,
+                        "quantity": 3,
+                        "status": "sending"
+                    }
+                }
+            },
+            "smith": { 
+
+            }
+        }
+    }
+}

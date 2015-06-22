@@ -9,42 +9,66 @@
         controller: 'AppCtrl'
     })
 
-    .state('app.search', {
-        url: "/search",
+    .state('app.orders', {
+        url: "/orders",
         views: {
             'menuContent': {
-                templateUrl: "templates/search.html"
+                templateUrl: "templates/order/orders.html",
+                controller: 'OrdersCtrl'
             }
         }
     })
 
-    .state('app.browse', {
-        url: "/browse",
+    .state('app.orderAdd', {
+        url: "/OrderAdd",
         views: {
             'menuContent': {
-                templateUrl: "templates/browse.html"
+                templateUrl: "templates/order/orderAdd.html",
+                controller: 'OrderAddCtrl'
             }
         }
     })
-      .state('app.playlists', {
-          url: "/playlists",
+    
+    .state('app.clients', {
+          url: "/clients",
           views: {
               'menuContent': {
-                  templateUrl: "templates/playlists.html",
-                  controller: 'PlaylistsCtrl'
+                  templateUrl: "templates/client/clients.html",
+                  controller: 'ClientsCtrl'
               }
           }
-      })
+    })
 
-    .state('app.single', {
-        url: "/playlists/:playlistId",
+        .state('app.clientAdd', {
+            url: "/clientAdd",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/client/clientAdd.html",
+                    controller: 'ClientAddCtrl'
+                }
+            }
+        })
+
+     .state('app.products', {
+         url: "/products",
+         views: {
+             'menuContent': {
+                 templateUrl: "templates/product/products.html",
+                 controller: 'ProductsCtrl'
+             }
+         }
+     })
+
+    .state('app.productAdd', {
+        url: "/ProductAdd",
         views: {
             'menuContent': {
-                templateUrl: "templates/playlist.html",
-                controller: 'PlaylistCtrl'
+                templateUrl: "templates/product/productAdd.html",
+                controller: 'ProductAddCtrl'
             }
         }
-    });
+    })
+
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/playlists');
+    $urlRouterProvider.otherwise('/app/orders');
 });

@@ -1,1 +1,18 @@
 /* Empty. Add your own CSS if you like */
+
+.floatleft {
+  float:left;
+}
+
+.floatright {
+  float:right;
+}
+
+.bottom5 {
+    padding-bottom:5px;
+}
+
+img.selected {
+    border:2px solid red
+}
+

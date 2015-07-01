@@ -34,7 +34,7 @@
     var addNew = function () {
 
         var prod = {
-            brank: "",
+            brand: "",
             name: "",
             quantityweight: "",
             productno: "",
@@ -50,22 +50,38 @@
             prod.price = 0;
 
         if (prod.datakey) {
-            exp.transactionDateTime = exp.transactionDate.getTime();
+
             ref.child(prod.datakey).set(prod);
             $rootScope.$emit('prod.change', products);
         }
         else {
-            products.push(prod);
-            //localStorageService.set('ionic.expenses', expenses);
-            exp.transactionDateTime = exp.transactionDate.getTime();
-            ref.push(exp).once('value', function (data) {
+            
+            //localStorageService.set('ionic.products', products);
+            
+            ref.push(prod).once('value', function (data) {
+                prod.datakey = data.key();
+                products.push(prod);
                 $rootScope.$emit('prod.change', products);
             });
         }
     };
 
+    var getProduct = function (datakey) {
+
+        var deferred = $q.defer();
+
+        ref.child(datakey).once('value', function (data) {
+            p = data.val();
+            deferred.resolve(p);
+        });
+
+        return deferred.promise;
+    }
+
+
     return {
         getProducts: getProducts,
+        getProduct: getProduct,
         addNew: addNew,
         save: save
     }

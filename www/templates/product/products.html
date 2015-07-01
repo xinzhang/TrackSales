@@ -1,11 +1,23 @@
 ﻿<ion-view view-title="{{title}}">
     <ion-content>
+        <ion-refresher pulling-text="Pull to refresh..."
+                       on-refresh="refresh()">
+        </ion-refresher>
+
         <ion-list>
-            <idon-item ng-repeat="p in products">
-                <a href="#">
-                    {{p.datakey}}
-                </a>
-            </idon-item>
+            <div class="item item-divider"></div>
+
+            <ion-item class="item" ng-repeat="item in products" ui-sref="app.productDetail({datakey: item.datakey})">
+                <div>
+                    <span>
+                        <strong>{{ item.name }} </strong>
+                        <span ng-hide="item.title == item.type"> - {{item.title}}</span>
+                    </span>
+                </div>
+                <!--<ion-option-button class="button-positive" ui-sref="tab.productedit({expensekey: item.datakey})">Edit</ion-option-button>
+        <ion-option-button class="button-assertive" ng-click="delete(item.datakey)">Delete</ion-option-button>-->
+            </ion-item>
+                        
         </ion-list>
     </ion-content>
 

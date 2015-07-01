@@ -25,5 +25,8 @@ angular.module('app')
 
     };
 
+    $scope.refresh = function () {
+        active();
+    }
 
 });

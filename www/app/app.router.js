@@ -69,6 +69,16 @@
         }
     })
 
+     .state('app.productDetail', {
+         url: "/ProductDetail/:datakey",
+         views: {
+             'menuContent': {
+                 templateUrl: "templates/product/productDetail.html",
+                 controller: 'ProductDetailCtrl'
+             }
+         }
+     })
+
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/products');
 });

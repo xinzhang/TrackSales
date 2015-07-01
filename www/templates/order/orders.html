@@ -1,0 +1,16 @@
+﻿<ion-view view-title="{{title}}">
+    <ion-content>
+        <ion-list>
+            <idon-item ng-repeat="o in orders">
+                <a href="#">
+                    {{o.datakey}}
+                </a>
+            </idon-item>
+        </ion-list>
+    </ion-content>
+
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-plus-round" ui-sref="app.orderAdd()"></button>
+    </ion-nav-buttons>
+
+</ion-view>
